@@ -1,8 +1,8 @@
 let users = [
-    { first_name: 'Sarbottam', password: '12345678' },
-    { first_name: 'Krizza', password: '12345678' },
-    { first_name: 'Tejas', password: '12345678' },
-    { first_name: 'Angelo', password: '12345678' },
+    { email: 'Sarbottam@gmail.com', password: '12345678' },
+    { email: 'Krizza@gmail.com', password: '12345678' },
+    { email: 'Tejas@gmail.com', password: '12345678' },
+    { email: 'Angelo@gmail.com', password: '12345678' },
 
 ];
 

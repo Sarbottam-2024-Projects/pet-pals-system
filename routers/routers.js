@@ -16,7 +16,7 @@ router.get('/home', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'));
 });
 
-
-router.get('/users', controller.getUsers);
+// POST request for login
+router.post('/login', controller.login);
 
 module.exports = router;

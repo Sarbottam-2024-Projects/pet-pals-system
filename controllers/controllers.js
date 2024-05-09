@@ -1,8 +1,16 @@
+
+// Controller For User Model
 let userModel = require('../models/user');
 
-function getUsers(req, res) {
+function login(req, res) {
+    let { email, password } = req.body;
     let users = userModel.getAllUsers();
-    res.json(users);
+    let user = users.find(user => user.email === email && user.password === password);
+    if (user) {
+        res.send('Login Success');
+    } else {
+        res.send('Login Failed');
+    }
 }
 
-module.exports = { getUsers };
+module.exports = { login };
