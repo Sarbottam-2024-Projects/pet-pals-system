@@ -7,7 +7,7 @@ function login(req, res) {
     let users = userModel.getAllUsers();
     let user = users.find(user => user.email === email && user.password === password);
     if (user) {
-        res.send('Login Success');
+        res.redirect('/home');
     } else {
         res.send('Login Failed');
     }

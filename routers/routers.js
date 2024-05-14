@@ -16,6 +16,18 @@ router.get('/home', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'));
 });
 
+router.get('/pets', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'views', 'pets.html'));
+});
+
+router.get('/profile', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'views', 'profile.html'));
+});
+
+router.get('/register', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '..', 'views', 'register.html'));
+});
+
 // POST request for login
 router.post('/login', controller.login);
 

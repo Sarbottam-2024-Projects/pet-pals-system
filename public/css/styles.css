@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+}
+
+.page-info h1 {
+  font-weight: 800;
+}
+
+.text-red {
+  color: #862c27;
+}
+
+.page-btn {
+  background-color: #862c27;
+  color: #fff;
+}
+
+.page-btn a {
+  color: #fff;
+
+}
+
+.page-btn:hover {
+  border: 1px solid #862c27;
+}
+
+a {
+    color: #862c27;
+    font-weight: 500;
+}
+
+a:hover {
+    color: rgb(63, 63, 174);
+}
+
+.pet-card img{
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pet-card-info {
+    text-align: left;
+    margin-top: 15px;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #862c27;
+}
+
+.pet-card-info p, a {
+    font-size: 14px;
+    margin: 0;
+}
+
+.pet-card-info a {
+  color: #862c27;
+}
+
+footer {
+    background-color: #862c27;
+    color: #fff;
+    text-align: left;
+}
+
+footer a {
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-info {
+    width: 50%;
+}
+
+.footer-links {
+    width: 30%;
+    text-align: left;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+/* Profile CSS */
+.text-left {
+  text-align: left;
+}

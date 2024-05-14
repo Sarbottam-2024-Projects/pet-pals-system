@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Pet Pals</title>
+    <title>Register | Pet Pals</title>
+
 
 
     <!-- Bootstrap CSS -->
@@ -27,7 +28,7 @@
               
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" href="/register">Register</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </div>
                 </div>
             </div>
@@ -41,14 +42,18 @@
     <div class="container mt-5">
 
         <div class="page-info text-center mt-5">
-            <h1>Login: Welcome to Pet Pals! Your favorite pet adoption platform.</h1>
+            <h1>Register: Welcome to Pet Pals! Your favorite pet adoption platform.</h1>
             <p class="mt-4">Please sign in to your account to continue browsing adoptable pets, manage your profile, and
                 connect with shelters. If you're new here, sign up to join our community and find your perfect pet
                 companion. Let's make a difference together!
             </p>
         </div>
 
-        <form class="mt-5" action="/login" method="POST">
+        <form class="mt-5" action="/register" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Full Name</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="email" name="email">
@@ -57,10 +62,10 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password">
             </div>
-            <button type="submit" class="btn page-btn">Login</button>
+            <button type="submit" class="btn page-btn">Register</button>
             <br>
             <br>
-            <p>Don't have an account? <a href="/register">Register</a></p>
+            <p>Already have an account? <a href="/login">Login</a></p>
         </form>
     </div>
 
