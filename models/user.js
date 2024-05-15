@@ -1,13 +1,40 @@
-let users = [
-    { email: 'Sarbottam@gmail.com', password: '12345678' },
-    { email: 'Krizza@gmail.com', password: '12345678' },
-    { email: 'Tejas@gmail.com', password: '12345678' },
-    { email: 'Angelo@gmail.com', password: '12345678' },
+const { client } = require('../dbConnection.js');
 
-];
-
-function getAllUsers() {
-    return users;
+const getUserCredentials = async (email) => {
+  try {
+    let query = { email: email};
+    await client.connect();
+    let collection = await client.db("TestDB").collection("users");
+    let result = await collection.findOne(query);
+    return result;
+  } catch (error) {
+    throw error;
+  } finally {
+    client.close()
+  }
 }
 
-module.exports = { getAllUsers };
+
+const addUser = async (email, password, contact_number) => {
+  try {
+    await client.connect();
+    let collection = client.db("TestDB").collection("users");
+
+    let newUser = { 
+      email: email,
+      password: password, 
+      contact_number: contact_number,
+      creation_date: new Date()
+    };
+    let result = await collection.insertOne(newUser);
+    return result;
+  } catch (error) {
+      throw error;
+  }
+}
+
+
+module.exports = { 
+  getUserCredentials,
+  addUser
+};

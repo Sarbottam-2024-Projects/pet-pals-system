@@ -1,0 +1,25 @@
+#error-message {
+  /* Customize the error message appearance here */
+  color: red;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border: 1px solid red;
+  margin-bottom: 10px;
+}
+
+.show {
+  display: block; /* Make the message visible */
+}
+
+.hidden {
+  display: none; /* Initially hide the message */
+}
+
+#signup-message {
+  /* Customize the error message appearance here */
+  color: rgb(255, 255, 255);
+  background-color: #0cba0e;
+  padding: 10px;
+  /* border: 1px solid rgb(0, 255, 106); */
+  margin-bottom: 10px;
+}

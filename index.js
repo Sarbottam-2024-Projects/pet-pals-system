@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 let express = require('express');
 let app = express();
 let router = require('./routers/routers');
@@ -8,8 +10,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(router);
-
-
 
 app.listen(port, () => {
     console.log(`App is running on port: ${port}`);
