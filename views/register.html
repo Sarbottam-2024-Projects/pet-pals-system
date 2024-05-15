@@ -1,86 +1,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Pet Pals</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Pet Pals</title>
 
 
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container mt-3">
-            <div class="d-flex justify-content-between w-100">
-                <div>
-                    <a class="navbar-brand" href="#">
-                        <img src="../img/petpals_logo.png" />
-                    </a>
-                </div>
-              
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link" href="/login">Login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-
-    <br>
-    <br>
-
-    <div class="container mt-5">
-
-        <div class="page-info text-center mt-5">
-            <h1>Register: Welcome to Pet Pals! Your favorite pet adoption platform.</h1>
-            <p class="mt-4">Please sign in to your account to continue browsing adoptable pets, manage your profile, and
-                connect with shelters. If you're new here, sign up to join our community and find your perfect pet
-                companion. Let's make a difference together!
-            </p>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container mt-3">
+      <div class="d-flex justify-content-between w-100">
+        <div>
+          <a class="navbar-brand" href="#">
+            <img src="../img/petpals_logo.png" />
+          </a>
         </div>
 
-        <form class="mt-5" action="/register" method="POST">
-            <div class="mb-3">
-                <label for="email" class="form-label">Full Name</label>
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-            <button type="submit" class="btn page-btn">Register</button>
-            <br>
-            <br>
-            <p>Already have an account? <a href="/login">Login</a></p>
-        </form>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/login">Login</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </nav>
 
 
+  <br>
+  <br>
+
+  <div class="container mt-5">
+    <div class="page-info text-center mt-5">
+      <h1>Register: Welcome to Pet Pals! Your favorite pet adoption platform.</h1>
+      <p class="mt-4">Please sign in to your account to continue browsing adoptable pets, manage your profile, and
+        connect with shelters. If you're new here, sign up to join our community and find your perfect pet
+        companion. Let's make a difference together!
+      </p>
+    </div>
+    <div id="error-message" class="hidden"></div>
+    <form id="signup-form" class="mt-5">
+      <div class="mb-3">
+        <label for="full_name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="full_name" name="full_name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+      </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact Number</label>
+        <input class="form-control" type="tel" id="contact_number" name="contact_number" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
 
 
+  </div>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  <!-- Main Script -->
+  <script src="/js/registerScript.js"></script>
 
-
-
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
-    <!-- Main Script -->
-    <script src="/js/script.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ const getUserCredentials = async (email) => {
   try {
     let query = { email: email};
     await client.connect();
-    let collection = await client.db("TestDB").collection("users");
+    let collection = client.db("TestDB").collection("users");
     let result = await collection.findOne(query);
     return result;
   } catch (error) {
@@ -15,12 +15,13 @@ const getUserCredentials = async (email) => {
 }
 
 
-const addUser = async (email, password, contact_number) => {
+const addUser = async (full_name, email, password, contact_number) => {
   try {
     await client.connect();
     let collection = client.db("TestDB").collection("users");
 
     let newUser = { 
+      full_name: full_name,
       email: email,
       password: password, 
       contact_number: contact_number,

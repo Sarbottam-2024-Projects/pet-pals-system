@@ -1,21 +1,3 @@
-function mainNavbar() {
-  let navbar = document.getElementById("mainNavbar");
-
-  let navbarComponent = `
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                  <a class="nav-link" href="/signup">Signup</a>
-              </div>
-          </div>
-  
-      </nav>
-  `;
-
-  navbar.innerHTML = navbarComponent;
-}
-mainNavbar()
-
 const signUpMessageDiv = document.getElementById('signup-message');
 
 window.onbeforeunload = function () {
@@ -23,16 +5,14 @@ window.onbeforeunload = function () {
 }
 window.onload = function () { // Run after DOM loads
   console.log("onload")
-  const sessionEmail = sessionStorage.getItem('email');
-  const signUpResult = sessionStorage.getItem('signUpResult');
+  const registeredEmail = sessionStorage.getItem('emailRegistered');
 
-  if (sessionEmail && signUpResult) {
+  if (registeredEmail) {
     console.log("show")
-    showSignUpMessage(`${sessionEmail} is Created`);
+    showSignUpMessage(`${registeredEmail} is Created`);
     const emailInput = document.getElementById('email');
-    emailInput.value = sessionEmail;
-    sessionStorage.setItem('signUpResult', false);
-    sessionStorage.removeItem('email')
+    emailInput.value = registeredEmail;
+    sessionStorage.removeItem('emailRegistered')
   } else {
     console.log("clear")
     clearSignUpMessage();
@@ -78,7 +58,7 @@ function handleLoginResponse(data) {
 
   if (data.message) {
     clearErrorMessage();
-    sessionStorage.setItem('logged_in_email', data.message);
+    sessionStorage.setItem('emailRegistered', data.message);
     window.location.href = '/home';
   }
 }

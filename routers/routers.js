@@ -3,7 +3,7 @@ let express = require('express');
 let router = express.Router();
 let path = require('path');
 let { login } = require('../controllers/loginController');
-let { signup } = require('../controllers/signupController');
+let { register } = require('../controllers/registerController');
 let { logout } = require('../controllers/logoutController');
 
 router.get('/', (req, res) => {
@@ -18,13 +18,20 @@ router.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-router.get('/signup', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'views', 'signup.html'));
-});
-
-
 router.get('/home', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'));
+});
+
+router.get('/pets', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'views', 'pets.html'));
+});
+
+router.get('/profile', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'views', 'profile.html'));
+});
+
+router.get('/register', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'views', 'register.html'));
 });
 
 // Add error handling for route that might not be found
@@ -34,7 +41,7 @@ router.get('*', (req, res) => {
 
 // API routes
 router.post('/login', login);
-router.post('/signup', signup);
+router.post('/register', register);
 router.get('/logout', logout);
 
 module.exports = router;

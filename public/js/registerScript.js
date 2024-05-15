@@ -1,28 +1,6 @@
-function mainNavbar() {
-    let navbar = document.getElementById("mainNavbar");
-
-    let navbarComponent = `
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" href="/home">Home</a>
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/signup">Signup</a>
-                </div>
-            </div>
-    
-        </nav>
-    `;
-
-    navbar.innerHTML = navbarComponent;
-}
-
-mainNavbar();
-
 const signupForm = document.getElementById('signup-form');
-const errorMessage = document.getElementById('error-message');
-
 const errorMessageDiv = document.getElementById('error-message');
+
 function showErrorMessage(message) {
   errorMessageDiv.textContent = message;
   errorMessageDiv.classList.remove('hidden'); // Remove hidden class to show
@@ -36,26 +14,31 @@ function clearErrorMessage() {
 }
 
 function handleSignupResponse(data) {
-  console.log(data)
-  if (data.errors === 'Email already exists') {
-    showErrorMessage('Email already exists');
-    sessionStorage.setItem('signUpResult', false);
-  }  else {
-    clearErrorMessage();
-    sessionStorage.setItem('email', data.message);
-    sessionStorage.setItem('signUpResult', true);
-    window.location.href = '/login';
+  try {
+    console.log(data)
+    if (data.errors === 'Email already exists') {
+      showErrorMessage('Email already exists');
+      sessionStorage.removeItem('emailRegistered');
+    }  else {
+      clearErrorMessage();
+      sessionStorage.setItem('emailRegistered', data.message);
+      window.location.href = '/login';
+    }
+  } catch (error) {
+    console.error('Error registering:', error);
+    return res.status(500).json({ error: 'Internal server error' }); 
   }
+  
 }
 
 signupForm.addEventListener('submit', (event) => {
+  console.log(signupForm)
   event.preventDefault();
-  // Send signup data to server using fetch or Axios
-
   // Handle server response
-  fetch('/signup', {
+  fetch('/register', {
     method: 'POST',
     body: JSON.stringify({
+      "full_name": document.getElementById('full_name').value,
       "email": document.getElementById('email').value,
       "password": document.getElementById('password').value,
       "contact_number": document.getElementById('contact_number').value
