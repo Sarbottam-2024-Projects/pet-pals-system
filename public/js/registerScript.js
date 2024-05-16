@@ -15,7 +15,6 @@ function clearErrorMessage() {
 
 function handleSignupResponse(data) {
   try {
-    console.log(data)
     if (data.errors === 'Email already exists') {
       showErrorMessage('Email already exists');
       sessionStorage.removeItem('emailRegistered');

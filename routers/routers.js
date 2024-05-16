@@ -2,6 +2,7 @@
 let express = require('express');
 let router = express.Router();
 let path = require('path');
+let { authenticateToken } = require('../middleware/authenticateToken');
 let { login } = require('../controllers/loginController');
 let { register } = require('../controllers/registerController');
 let { logout } = require('../controllers/logoutController');
@@ -15,7 +16,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  res.redirect('/login');
+  res.sendFile(path.resolve(__dirname, '..', 'views', 'login.html'));
 });
 
 router.get('/home', (req, res) => {
@@ -42,6 +43,5 @@ router.get('*', (req, res) => {
 // API routes
 router.post('/login', login);
 router.post('/register', register);
-router.get('/logout', logout);
 
 module.exports = router;

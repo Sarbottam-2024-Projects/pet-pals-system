@@ -5,14 +5,15 @@ window.onbeforeunload = function () {
 }
 window.onload = function () { // Run after DOM loads
   console.log("onload")
-  const registeredEmail = sessionStorage.getItem('emailRegistered');
+  let registeredEmail = sessionStorage.getItem('emailRegistered');
+  console.log('registered email', registeredEmail);
+  sessionStorage.removeItem('emailRegistered');
 
   if (registeredEmail) {
     console.log("show")
     showSignUpMessage(`${registeredEmail} is Created`);
-    const emailInput = document.getElementById('email');
+    let emailInput = document.getElementById('email');
     emailInput.value = registeredEmail;
-    sessionStorage.removeItem('emailRegistered')
   } else {
     console.log("clear")
     clearSignUpMessage();
@@ -59,6 +60,7 @@ function handleLoginResponse(data) {
   if (data.message) {
     clearErrorMessage();
     sessionStorage.setItem('emailRegistered', data.message);
+    sessionStorage.setItem('loggedInEmail', data.message);
     window.location.href = '/home';
   }
 }

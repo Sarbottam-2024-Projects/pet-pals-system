@@ -19,7 +19,8 @@ const login = async (req, res) => {
     if (!isPasswordValid) {
         return res.status(401).json({ error: 'Invalid email or password' });
     }
-    // return res.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'));
+
+    
     return res.status(200).json({ message: email });
 
   } catch (error) {
