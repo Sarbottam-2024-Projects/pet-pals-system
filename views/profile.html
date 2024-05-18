@@ -18,7 +18,24 @@
 <body>
 
     <!-- Reusable Header Component -->
-    <div id="mainNavbar"></div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container mt-3">
+        <div class="d-flex justify-content-between w-100">
+          <div>
+            <a class="navbar-brand" href="#">
+              <img src="../img/petpals_logo.png" />
+            </a>
+          </div>
+  
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" href="/home">Home</a>
+              <a class="nav-link active" id="logout_a" >Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
 
     <div class="container">
@@ -36,22 +53,22 @@
                                 src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
                             <br>
                             <h2 class="font-weight-bold">Profile Name</h2>
-                            <p class="text-black-50">profile_email@gmail.com</p>
+                            <p class="text-black-50" id="email_under"></p>
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <form class="profile-form">
+                        <form class="profile-form" id="update-form">
                             <div class="mb-3 text-left">
                                 <label for="full_name" class="form-label">Full Name</label>
-                                <input type="email" class="form-control" id="full_name">
+                                <input type="text" class="form-control" id="full_name">
                             </div>
                             <div class="mb-3 text-left">
                                 <label for="email" class="form-label">Your Email</label>
-                                <input type="email" class="form-control" id="email">
+                                <input type="email" class="form-control" id="email" readonly>
                             </div>
                             <div class="mb-3 text-left">
                                 <label for="contact" class="form-label">Your Contact No.</label>
-                                <input type="tel" class="form-control" id="contact">
+                                <input type="tel" class="form-control" id="contact_number">
                             </div>
                             <div class="mb-3 text-left">
                                 <label for="address" class="form-label">Address</label>
@@ -91,7 +108,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
     <!-- Main Script -->
-    <script src="/public/js/indexScript.js"></script>
+    <script src="/js/profileScript.js"></script>
 </body>
 
 </html>

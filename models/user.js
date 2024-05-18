@@ -12,7 +12,7 @@ const getUserCredentials = async (email) => {
   } finally {
     client.close()
   }
-}
+};
 
 
 const addUser = async (full_name, email, password, contact_number) => {
@@ -32,10 +32,32 @@ const addUser = async (full_name, email, password, contact_number) => {
   } catch (error) {
       throw error;
   }
-}
+};
 
+const updateUserProfile = async (email, full_name, contact_number, address, state, profile_description) => {
+  try {
+    let attributes = {};
+    attributes['full_name'] = full_name || undefined;
+    attributes['contact_number'] = contact_number || undefined;
+    attributes['address'] = address || undefined;
+    attributes['state'] = state || undefined;
+    attributes['profile_description'] = profile_description || undefined;
+
+    await client.connect();
+    let collection = client.db("TestDB").collection("users");
+
+    let result = await collection.updateOne(
+      { email: email},
+      { $set: attributes}
+    );
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
 
 module.exports = { 
   getUserCredentials,
-  addUser
+  addUser,
+  updateUserProfile
 };

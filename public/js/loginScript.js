@@ -57,10 +57,10 @@ function handleLoginResponse(data) {
     showErrorMessage(data.error);
   }
 
-  if (data.message) {
+  if (data.token && data.email) {
     clearErrorMessage();
-    sessionStorage.setItem('emailRegistered', data.message);
-    sessionStorage.setItem('loggedInEmail', data.message);
+    localStorage.setItem('jwt_token', data.token);
+    localStorage.setItem('email', data.email);
     window.location.href = '/home';
   }
 }

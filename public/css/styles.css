@@ -125,3 +125,7 @@ footer a {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+#logout_a {
+  cursor: pointer;
+}
