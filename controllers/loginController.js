@@ -2,7 +2,9 @@
 // Controller For User Model
 let path = require('path');
 const bcrypt = require('bcryptjs');
+const jwt = require("jsonwebtoken");
 let { getUserCredentials } = require('../models/user');
+
 
 const login = async (req, res) => {
   const { email, password } = req.body;
@@ -20,8 +22,10 @@ const login = async (req, res) => {
         return res.status(401).json({ error: 'Invalid email or password' });
     }
 
-    
-    return res.status(200).json({ message: email });
+    return res.status(200).json({ 
+      email: email,
+      token: jwt.sign(email, process.env.JWT_TOKEN)
+    });
 
   } catch (error) {
     console.error('Error logging in:', error);
