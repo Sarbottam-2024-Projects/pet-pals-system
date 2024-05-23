@@ -37,6 +37,10 @@ router.get('/register', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'views', 'register.html'));
 });
 
+router.get('/adopt', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'views', 'adoption.html'));
+});
+
 // API routes
 router.post('/login', login);
 router.post('/register', register);
