@@ -24,7 +24,7 @@ function mainNavbar() {
                             <a class="nav-link" href="/pets">Adopt Pets</a>
                             <a class="nav-link" href="/profile">My Profile</a>
                             <a class="nav-link" id="shelter-link" href="/shelter">Shelter</a>
-                            <a class="nav-link" href="/logout">Logout</a>
+                            <a class="nav-link" href="/logout" id="logout_a">Logout</a>
                         </div>
                     </div>
                 </div>
