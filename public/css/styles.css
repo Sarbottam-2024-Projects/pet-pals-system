@@ -129,3 +129,16 @@ footer a {
 #logout_a {
   cursor: pointer;
 }
+
+
+.shelter-tab-wrap .nav-tabs button {
+  color: #333;
+}
+
+.add-pet-form {
+  text-align: left;
+}
+
+.add-pet-form label {
+  margin-bottom: 10px;
+}

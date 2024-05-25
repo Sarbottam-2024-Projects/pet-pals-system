@@ -18,11 +18,6 @@ function handleResponse(data) {
     state.value = data.user.state || null;
     role.value = data.user.role || null;
 
-    // if (data.user.role === 'shelter') {
-    //   shelterLink.style.display = 'block';
-    // } else {
-    //   shelterLink.style.display = 'none';
-    // }
   } catch (error) {
     console.error("Error:", error);
     throw error;
