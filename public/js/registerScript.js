@@ -40,7 +40,8 @@ signupForm.addEventListener('submit', (event) => {
       "full_name": document.getElementById('full_name').value,
       "email": document.getElementById('email').value,
       "password": document.getElementById('password').value,
-      "contact_number": document.getElementById('contact_number').value
+      "contact_number": document.getElementById('contact_number').value,
+      "role": document.getElementById('role').value,
     }),
     headers: {
       "Content-Type": "application/json"
