@@ -1,4 +1,6 @@
-const { insertPet, getAllPets } = require('../models/petModel');
+const { insertPet, getAllPets, getPetById } = require('../models/petModel');
+
+let lastPetId = 0;
 
 // Function to add new pet
 async function addNewPet(req, res) {
@@ -14,7 +16,10 @@ async function addNewPet(req, res) {
     } = req.body;
 
     try {
+        lastPetId++; 
+        const petId = lastPetId; 
         await insertPet({
+            id: petId,
             pet_name,
             pet_description,
             pet_species,
@@ -42,4 +47,18 @@ async function getPetItems(req, res) {
     }
 }
 
-module.exports = { addNewPet, getPetItems };
+// Function to get a single pet by ID
+async function getSinglePet(req, res) {
+    const petId = req.params.id; 
+    try {
+        const pet = await getPetById(petId);
+        if (!pet) {
+            return res.status(404).send('Pet not found');
+        }
+        res.json(pet);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+module.exports = { addNewPet, getPetItems, getSinglePet };

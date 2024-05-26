@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const petRow = document.createElement('tr');
                 
                 petRow.innerHTML = `
-                    <th scope="row">${index + 1}</th>
+                    <th scope="row">${pet.id}</th>
                     <td>${pet.pet_name}</td>
                     <td>${pet.pet_age} ${pet.pet_age > 1 ? 'years' : 'year'}</td>
                     <td>${pet.pet_species}</td>

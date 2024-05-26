@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="pet-card-info">
                             <h2>${pet.pet_name}</h2>
                             <p>Age: ${pet.pet_age}</p>
-                            <a href="">View this pet</a>
+                            <a href="/single-pet?id=${pet.id}">View Single Pet</a>
                         </div>
                     </div>
                 `;
