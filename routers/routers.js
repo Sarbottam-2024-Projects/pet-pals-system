@@ -1,14 +1,17 @@
-// routers/routers.js
-let express = require('express');
-let router = express.Router();
-let path = require('path');
-let { authenticateToken } = require('../middleware/authenticateToken');
-let { login } = require('../controllers/loginController');
-let { register } = require('../controllers/registerController');
-let { logout } = require('../controllers/logoutController');
-let { getUser } = require('../controllers/getUserController');
-let { updateUser } = require('../controllers/updateUserProfileController');
+// router.js
 
+const express = require('express');
+const router = express.Router();
+const path = require('path');
+const { authenticateToken } = require('../middleware/authenticateToken');
+const { login } = require('../controllers/loginController');
+const { register } = require('../controllers/registerController');
+const { logout } = require('../controllers/logoutController');
+const { getUser } = require('../controllers/getUserController');
+const { updateUser } = require('../controllers/updateUserProfileController');
+const petController = require('../controllers/petController');
+
+// User Routes
 router.get('/', (req, res) => {
   res.redirect('/login');
 });
@@ -46,5 +49,12 @@ router.post('/login', login);
 router.post('/register', register);
 router.get('/user/:email', getUser)
 router.put('/updateUser', updateUser)
+
+// Pet Routes
+router.get('/pets', petController.getAllPets);
+router.get('/pets/:id', petController.getPetById);
+router.post('/pets', petController.createPet);
+router.put('/pets/:id', petController.updatePet);
+router.delete('/pets/:id', petController.deletePet);
 
 module.exports = router;
