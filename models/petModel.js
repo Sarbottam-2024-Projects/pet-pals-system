@@ -17,7 +17,7 @@ const addPetRequest = async (petDetails) => {
 };
 
 
-// Function to get all watches and sending them into api/items routes
+// Function to get all pet and sending them into api/pet routes
 async function getPetItems(req, res) {
     try {
         await client.connect();
