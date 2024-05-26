@@ -9,8 +9,6 @@ const getUserCredentials = async (email) => {
     return result;
   } catch (error) {
     throw error;
-  } finally {
-    client.close()
   }
 };
 

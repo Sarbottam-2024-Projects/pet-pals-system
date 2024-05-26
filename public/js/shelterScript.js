@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/api/pets')
         .then(response => response.json())
         .then(pets => {
-            const petList = document.getElementById('display_pet_table');
+            const petList = document.getElementById('pet_list_table');
             pets.forEach((pet, index) => {
                 const petRow = document.createElement('tr');
                 

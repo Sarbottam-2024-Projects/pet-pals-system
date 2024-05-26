@@ -8,8 +8,7 @@ let { register } = require('../controllers/registerController');
 let { logout } = require('../controllers/logoutController');
 let { getUser } = require('../controllers/getUserController');
 let { updateUser } = require('../controllers/updateUserProfileController');
-let { addNewPet } = require('../controllers/petController');
-const { getPetItems } = require('../models/petModel');
+let { addNewPet, getPetItems } = require('../controllers/petController');
 
 router.get('/', (req, res) => {
   res.redirect('/login');
