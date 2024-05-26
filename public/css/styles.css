@@ -34,36 +34,42 @@ body {
 }
 
 a {
-    color: #862c27;
-    font-weight: 500;
+  color: #862c27;
+  font-weight: 500;
+}
+
+#have-pets-a {
+  font-size: 16px;
 }
 
 a:hover {
-    color: rgb(63, 63, 174);
+  color: rgb(63, 63, 174);
 }
 
-.pet-card img{
-    border-radius: 15px;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.pet-card img {
+  border-radius: 15px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .pet-card-info {
-    text-align: left;
-    margin-top: 15px;
+  text-align: left;
+  margin-top: 15px;
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-    color: #862c27;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  color: #862c27;
+  text-align: left;
 }
 
-.pet-card-info p, a {
-    font-size: 14px;
-    margin: 0;
+.pet-card-info p,
+a {
+  font-size: 14px;
+  margin: 0;
 }
 
 .pet-card-info a {
@@ -71,29 +77,29 @@ h2 {
 }
 
 footer {
-    background-color: #862c27;
-    color: #fff;
-    text-align: left;
+  background-color: #862c27;
+  color: #fff;
+  text-align: left;
 }
 
 footer a {
-    color: #fff;
-    display: block;
-    margin-bottom: 10px;
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .footer-info {
-    width: 50%;
+  width: 50%;
 }
 
 .footer-links {
-    width: 30%;
-    text-align: left;
+  width: 30%;
+  text-align: left;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    margin: 0 10px;
-    font-weight: 500;
+  margin: 0 10px;
+  font-weight: 500;
 }
 
 /* Profile CSS */
@@ -111,15 +117,25 @@ footer a {
 }
 
 .show {
-  display: block; /* Make the message visible */
+  display: block;
+  /* Make the message visible */
 }
 
 .hidden {
-  display: none; /* Initially hide the message */
+  display: none;
+  /* Initially hide the message */
 }
 
 #signup-message {
   /* Customize the error message appearance here */
+  color: rgb(255, 255, 255);
+  background-color: #0cba0e;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#form-message {
+  /* Customize the submit message appearance here */
   color: rgb(255, 255, 255);
   background-color: #0cba0e;
   padding: 10px;
@@ -141,4 +157,136 @@ footer a {
 
 .add-pet-form label {
   margin-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#h1_brown {
+  margin: 0;
+  color: #862c27;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="have-pets"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  border-color: #862c27;
+}
+
+textarea {
+  height: 100px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  border-color: #862c27;
+  background-color: #ffffff;
+  text-decoration: underline black;
+}
+
+button[type="submit"] {
+  background-color: #833e37;
+  /* brown color */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.radio-label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-subcontainer-one {
+  flex : 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed;
+  border-color: #833e37;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+.form-subcontainer-two {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+.form-subcontainer-three {
+  flex : 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed;
+  border-color: #833e37;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+#have-pets-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.separator {
+  background-color: #833e37;  /* Change this to your desired color */
+  height: 3px;  /* Adjust the height as needed */
+  width: 100%;  /* Adjust the width as needed */
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.form-container-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.form-subcontainer-submit {
+  display: flex;
+}
+
+#h6-submit {
+  padding: 10px;
 }

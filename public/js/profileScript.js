@@ -54,20 +54,11 @@ updateForm.addEventListener('submit', (event) => {
       "Content-Type": "application/json"
     }
   })
-    .then(response => {
-      if (response.ok) {
-        alert("Profile updated successfully!");
-        window.location.href = '/home';
-        return response.json();
-      } else {
-        throw new Error('Failed to update profile');
-      }
-    })
-    .then(response => getUser(localStorage.getItem('email')))
-    .catch(error => {
-      console.error('Error:', error)
-      alert("Getting profile failed!");
-    })
+  .then(response => getUser(localStorage.getItem('email')))
+  .catch(error => {
+    console.error('Error:', error)
+    alert("Getting profile failed!");
+  })
 });
 
 
