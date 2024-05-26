@@ -134,6 +134,14 @@ footer a {
   margin-bottom: 10px;
 }
 
+#form-message {
+  /* Customize the submit message appearance here */
+  color: rgb(255, 255, 255);
+  background-color: #0cba0e;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 #logout_a {
   cursor: pointer;
 }

@@ -30,8 +30,7 @@ async function displaySinglePet() {
                 <p>Special Requirement: ${petData.pet_special_requirement}</p>
                 <img src="${petData.pet_image}" alt="${petData.pet_name}" width="200">
                 <br>
-                <a href="">Send adoption application</a>
-
+                <a href="/adopt?id=${petData.id}">Send adoption application</a>
             `;
         } else {
             petDetailsDiv.innerHTML = '<p>Pet not found</p>';

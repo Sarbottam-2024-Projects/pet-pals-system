@@ -8,6 +8,7 @@ let { register } = require('../controllers/registerController');
 let { logout } = require('../controllers/logoutController');
 let { getUser } = require('../controllers/getUserController');
 let { updateUser } = require('../controllers/updateUserProfileController');
+let { addAdoptApplication } = require('../controllers/adoptController')
 let { addNewPet, getPetItems, getSinglePet } = require('../controllers/petController');
 
 router.get('/', (req, res) => {
@@ -59,5 +60,6 @@ router.post('/add_pet', addNewPet)
 router.get('/api/pets', getPetItems)
 router.get('/api/pets/:id', getSinglePet);
 
+router.post('/adopt/application', addAdoptApplication)
 
 module.exports = router;

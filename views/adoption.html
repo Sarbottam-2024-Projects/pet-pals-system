@@ -18,28 +18,7 @@
 <body>
 
   <!-- Reusable Header Component -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container mt-3">
-      <div class="d-flex justify-content-between w-100">
-        <div>
-          <a class="navbar-brand" href="#">
-            <img src="../img/petpals_logo.png" />
-          </a>
-        </div>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active" href="/home">Home</a>
-            <a class="nav-link active" href="/profile">Profile</a>
-            <a class="nav-link active" id="logout_a">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <br>
-  <br>
-  <br>
+  <div id="mainNavbar"></div>
   <div class="container">
     <div class="page-info text-center mt-5">
       <h1>Every Pet Deserves a Loving Home. <br> <span class="text-red">Adopt</span> a Pet Today</h1>
@@ -50,7 +29,8 @@
         through <br> pet adoption.
       </p>
     </div>
-    <form>
+    <div id="form-message" class="hidden"></div>
+    <form class="mt-5" id="adopt-form">
       <div class="form-container">
         <div class="form-subcontainer-one">
           <h2>Pet Adoption Form</h2>
@@ -65,8 +45,8 @@
           <input type="email" id="email" name="email" required>
           <label for="occupation">Occupation:</label>
           <input type="text" id="occupation" name="occupation" required>
-          <label for="have-pets">Do you have pets? </label>
-          <input type="text" id="have-pets" name="have-pets" required>
+          <label for="have_pets">Do you have pets? </label>
+          <input type="text" id="have_pets" name="have_pets" required>
         </div>
         <div class="form-subcontainer-two">
         </div>
@@ -78,9 +58,9 @@
           <label for="children">How many children ages 0-18 live in your home?</label>
           <input type="number" id="children" name="children" required>
           <label for="agreement">Does everyone in your household agree to adopting a pet?</label>
-          <input type="text" id="yes" name="agreement" required>
+          <input type="text" id="agreement" name="agreement" required>
           <label for="homeType">Type of Home:</label>
-          <select id="homeType" name="homeType" required>
+          <select id="homeType" name="homeType" id="homeType" required>
             <option value="apartment">Apartment</option>
             <option value="house">House</option>
             <option value="other">Other</option>
@@ -104,7 +84,9 @@
 
     </form>
   </div>
-
+  </footer>
+  <script src="/js/indexScript.js"></script>
+  <script src="/js/adoptionScript.js"></script>
 </body>
 
 </html>
