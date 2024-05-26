@@ -4,7 +4,7 @@ let { getUserCredentials, addUser } = require('../models/user');
 
 
 const register = async (req, res) => {
-    const { full_name, email, password, contact_number } = req.body;
+    const { full_name, email, password, contact_number, role } = req.body;
 
     try {
         if (!email || !password || !contact_number) {
@@ -19,7 +19,7 @@ const register = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        await addUser(full_name, email, hashedPassword, contact_number)
+        await addUser(full_name, email, hashedPassword, contact_number, role)
 
         return res.status(201).json({ message: email });
 

@@ -5,6 +5,8 @@ let contactNumber = document.getElementById('contact_number');
 let address = document.getElementById('address');
 let state = document.getElementById('state');
 let profileDescription = document.getElementById('profile_description');
+let role = document.getElementById('role');
+let shelterLink = document.getElementById('shelter-link');
 
 function handleResponse(data) {
   try {
@@ -14,7 +16,8 @@ function handleResponse(data) {
     contactNumber.value = data.user.contact_number || null;
     address.value = data.user.address || null;
     state.value = data.user.state || null;
-    profileDescription.value = data.user.profile_description || null;
+    role.value = data.user.role || null;
+
   } catch (error) {
     console.error("Error:", error);
     throw error;
@@ -27,7 +30,7 @@ function getUser(email) {
     .then(response => response.json())
     .then(handleResponse)
     .catch(error => {
-     throw error;
+      throw error;
     })
 }
 
@@ -44,7 +47,8 @@ updateForm.addEventListener('submit', (event) => {
       "contact_number": contactNumber.value || undefined,
       "address": address.value || undefined,
       "state": state.value || undefined,
-      "profile_description": profileDescription.value || undefined
+      "profile_description": profileDescription.value || undefined,
+      "role": role.value || undefined
     }),
     headers: {
       "Content-Type": "application/json"

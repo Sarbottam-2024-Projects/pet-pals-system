@@ -138,6 +138,19 @@ footer a {
   cursor: pointer;
 }
 
+
+.shelter-tab-wrap .nav-tabs button {
+  color: #333;
+}
+
+.add-pet-form {
+  text-align: left;
+}
+
+.add-pet-form label {
+  margin-bottom: 10px;
+}
+
 h1 {
   text-align: center;
   margin-bottom: 20px;

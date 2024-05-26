@@ -1,0 +1,184 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Pals | Pet Adoption Platform</title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Reusable Header Component -->
+  <div id="mainNavbar"></div>
+
+  <div class="container">
+    <div class="page-info text-center mt-5">
+      <h1>Shelter Management System</h1>
+    </div>
+    <br>
+    <br>
+
+
+    <div class="shelter-tab-wrap">
+      <ul class="nav nav-tabs" id="shelterTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="display-pet-tab" data-bs-toggle="tab" data-bs-target="#display-pet-table"
+            type="button" role="tab" aria-controls="display-pet-table" aria-selected="true">Display Pet</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="add-pet-tab" data-bs-toggle="tab" data-bs-target="#add-pet-form" type="button"
+            role="tab" aria-controls="add-pet-form" aria-selected="false">Add Pet</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="application-tab" data-bs-toggle="tab" data-bs-target="#application-table"
+            type="button" role="tab" aria-controls="application-table" aria-selected="false">Applications</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="shelterTabContent">
+        <div class="tab-pane fade show active" id="display-pet-table" role="tabpanel" aria-labelledby="display-pet-tab"
+          tabindex="0">
+          <br>
+          <br>
+          <table class="table page-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Pet Name</th>
+                <th scope="col">Pet Age</th>
+                <th scope="col">Pet Species</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="pet_list_table">
+             
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="tab-pane fade" id="add-pet-form" role="tabpanel" aria-labelledby="add-pet-tab" tabindex="1">
+          <br>
+          <br>
+          <form action="/add_pet" class="page-form add-pet-form" method="POST">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="pet_name">Pet Name</label>
+                  <input name="pet_name" type="text" class="form-control" id="pet_name" placeholder="Enter name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="pet_age">Pet Age</label>
+                  <input name="pet_age" type="number" class="form-control" id="pet_age" placeholder="Enter Age">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="pet_species">Pet Species</label>
+                  <input name="pet_species" type="text" class="form-control" id="pet_species" placeholder="Enter Species">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="pet_breed">Pet Breed</label>
+                  <input name="pet_breed" type="text" class="form-control" id="pet_breed" placeholder="Enter Breed">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="pet_personality">Pet Personality</label>
+                  <input name="pet_personality" type="text" class="form-control" id="pet_personality"
+                    placeholder="Enter Personality">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label for="pet_special_requirement">Pet Special Requirement</label>
+                  <input name="pet_special_requirement" type="text" class="form-control" id="pet_special_requirement"
+                    placeholder="Enter Requirement">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group mb-3">
+                  <label for="pet_description">Pet Description</label>
+                  <textarea class="form-control" name="pet_description" id="pet_description" placeholder="Enter Description"></textarea>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group mb-3">
+                  <label for="pet_image">Pet Image</label>
+                  <input name="pet_image" type="text" class="form-control" id="pet_image"
+                    placeholder="Enter name">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div>
+                  <button class="btn page-btn" type="submit">Add Pet</button>
+                  
+                </div>
+              </div>
+            </div>
+           
+          </form>
+        </div>
+        <div class="tab-pane fade" id="application-table" role="tabpanel" aria-labelledby="application-tab"
+          tabindex="1">
+          <br>
+          <br>
+          <table class="table page-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Application Pet Name</th>
+                <th scope="col">Application Description</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>aaa</td>
+                <td>aaa</td>
+                <td><button class="btn page-btn" type="submit">Delete</button></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>bbb</td>
+                <td>bbb</td>
+                <td><button class="btn page-btn" type="submit">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer id="mainFooter" class="mt-5 pt-5 pb-5">
+
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  <!-- Main Script -->
+  <script src="/js/indexScript.js"></script>
+  <script src="/js/logoutScript.js"></script>
+  <script src="/js/shelterScript.js"></script>
+</body>
+
+</html>
