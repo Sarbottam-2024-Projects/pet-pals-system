@@ -8,6 +8,7 @@ let { register } = require('../controllers/registerController');
 let { logout } = require('../controllers/logoutController');
 let { getUser } = require('../controllers/getUserController');
 let { updateUser } = require('../controllers/updateUserProfileController');
+let { addNewPet } = require('../controllers/petController');
 
 router.get('/', (req, res) => {
   res.redirect('/login');
@@ -46,5 +47,6 @@ router.post('/login', login);
 router.post('/register', register);
 router.get('/user/:email', getUser)
 router.put('/updateUser', updateUser)
+router.post('/add_pet', addNewPet)
 
 module.exports = router;
