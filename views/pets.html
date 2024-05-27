@@ -30,20 +30,13 @@
         <div class="pet-list-container">
             <div class="pet-search-filter">
                 <div class="search-group-wrap w-50 m-auto mt-5">
-                    <div class="input-group">
-                        <select class="form-select" id="species_dropdown">
-                            <option selected>Choose Pet Type...</option>
+                    <div id="filter-container">
+                        <input type="text" id="search-name" placeholder="Search by pet name">
+                        <select id="species-filter">
+                            <option value="">All Species</option>
                             <option value="Dog">Dog</option>
-                            <option value="Cat">Cats</option>
+                            <option value="Cat">Cat</option>
                         </select>
-                        <input type="text" class="form-control" placeholder="Search pet breed">
-                        <select class="form-select" id="location_dropdown">
-                            <option selected>Filter Location...</option>
-                            <option value="Victoria">Victoria</option>
-                            <option value="New South Wales">New South Wales</option>
-                            <option value="Queensland">Queensland</option>
-                        </select>
-                        <button class="btn page-btn" type="button" id="searchBtn">Search</button>
                     </div>
                 </div>
             </div>
@@ -63,8 +56,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
     <!-- Main Script -->
     <script src="/js/indexScript.js"></script>
-    <!-- <script src="/js/petsScript.js"></script> -->
-    <script src="/js/searchScript.js"></script>
+    <script src="/js/petsScript.js"></script>
 
 </body>
 </html>
