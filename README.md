@@ -126,7 +126,7 @@ README.md
 ### Steps
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/pet-pals.git
+    git clone https://github.com/Sarbottam-2024-Projects/pet-pals-system.git
     cd pet-pals
     ```
 
