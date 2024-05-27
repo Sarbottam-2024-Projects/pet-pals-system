@@ -22,12 +22,12 @@ async function displaySinglePet() {
         if (petData) {
             petDetailsDiv.innerHTML = `
                 <h2>${petData.pet_name}</h2>
-                <p>Description: ${petData.pet_description}</p>
-                <p>Species: ${petData.pet_species}</p>
-                <p>Breed: ${petData.pet_breed}</p>
-                <p>Age: ${petData.pet_age}</p>
-                <p>Personality: ${petData.pet_personality}</p>
-                <p>Special Requirement: ${petData.pet_special_requirement}</p>
+                <h3>Description: ${petData.pet_description}</p>
+                <h3>Species: ${petData.pet_species}</p>
+                <h3>Breed: ${petData.pet_breed}</p>
+                <h3>Age: ${petData.pet_age}</p>
+                <h3>Personality: ${petData.pet_personality}</p>
+                <h3>Special Requirement: ${petData.pet_special_requirement}</p>
                 <img src="${petData.pet_image}" alt="${petData.pet_name}" width="200">
                 <br>
                 <a href="/adopt?id=${petData.id}">Send adoption application</a>

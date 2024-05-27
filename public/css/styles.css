@@ -11,6 +11,25 @@ body {
   text-align: center;
 }
 
+/* Parallax Slideshow Styles */
+.parallax-bg {
+  height: 600px; /* Adjust the height as needed */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-item {
+  height: 600px; /* Same height as .parallax-bg */
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .page-info h1 {
   font-weight: 800;
 }
@@ -59,17 +78,22 @@ a:hover {
 }
 
 h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    color: #862c27;
+}
+
+h3 {
   font-size: 20px;
   font-weight: 600;
   margin: 0;
-  color: #862c27;
-  text-align: left;
+  color: #000000;
 }
 
-.pet-card-info p,
-a {
-  font-size: 14px;
-  margin: 0;
+.pet-card-info p, a {
+    font-size: 14px;
+    margin: 0;
 }
 
 .pet-card-info a {
