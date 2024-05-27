@@ -1,10 +1,17 @@
-let { addApplication, getAllApplication } = require('../models/adopt');
+let { addApplication, getAllApplication, getApplicationById, applicationCollection } = require('../models/adopt');
+
+let lastApplicationId = 0;
+
 
 
 const addAdoptApplication = async (req, res) => {
 
   try {
+    lastApplicationId++; 
+    const applicationId = lastApplicationId; 
+
     let applicationForm = {
+      id: applicationId,
       full_name: req.body.full_name,
       address: req.body.address,
       phone: req.body.phone,
@@ -47,4 +54,41 @@ async function getApplicationItems(req, res) {
 }
 
 
-module.exports = { addAdoptApplication, getApplicationItems };
+async function getSingleApplication(req, res) {
+  const applicationId = req.params.id; 
+  try {
+      const application = await getApplicationById(applicationId);
+      if (!application) {
+          return res.status(404).send('application not found');
+      }
+      res.json(application);
+  } catch (err) {
+      console.error(err);
+  }
+}
+
+async function updateApplicationStatus(req, res) {
+  const applicationId = parseInt(req.params.id);
+  const updatedStatus = req.body.status;
+
+  try {
+    const result = await applicationCollection.updateOne(
+      { id: applicationId },
+      { $set: { status: updatedStatus } }
+    );
+
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ message: 'Application not found' });
+    }
+
+    const updatedApplication = await getApplicationById(applicationId);
+    res.status(200).json(updatedApplication);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+}
+
+
+
+module.exports = { addAdoptApplication, getApplicationItems, getSingleApplication, updateApplicationStatus };

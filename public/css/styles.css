@@ -39,7 +39,7 @@ body {
 }
 
 .page-btn {
-  background-color: #862c27;
+  background-color: #333;
   color: #fff;
 }
 
@@ -231,7 +231,7 @@ select {
 }
 
 button[type="submit"] {
-  background-color: #833e37;
+  background-color: #333;
   /* brown color */
   border: none;
   color: white;

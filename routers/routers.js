@@ -8,8 +8,9 @@ let { register } = require('../controllers/registerController');
 let { logout } = require('../controllers/logoutController');
 let { getUser } = require('../controllers/getUserController');
 let { updateUser } = require('../controllers/updateUserProfileController');
-let { addAdoptApplication, getApplicationItems } = require('../controllers/adoptController')
+let { addAdoptApplication, getApplicationItems, getSingleApplication, updateApplicationStatus } = require('../controllers/adoptController')
 let { addNewPet, getPetItems, getSinglePet } = require('../controllers/petController');
+const { getApplicationById } = require('../models/adopt');
 
 router.get('/', (req, res) => {
   res.redirect('/login');
@@ -62,6 +63,9 @@ router.get('/api/pets/:id', getSinglePet);
 
 router.post('/adopt/application', addAdoptApplication)
 router.get('/api/applications', getApplicationItems);
+router.get('/api/applications/:id', getSingleApplication);
+router.put('/api/applications/:id', updateApplicationStatus)
+
 
 
 module.exports = router;
