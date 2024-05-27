@@ -28,7 +28,7 @@ async function displaySinglePet() {
                 <h3>Age: ${petData.pet_age}</p>
                 <h3>Personality: ${petData.pet_personality}</p>
                 <h3>Special Requirement: ${petData.pet_special_requirement}</p>
-                <img src="${petData.pet_image}" alt="${petData.pet_name}" width="200">
+                <img src="${petData.pet_image}" alt="${petData.pet_name}" width="500">
                 <br>
                 <a href="/adopt?id=${petData.id}" class="btn page-btn mt-3">Send adoption application</a>
             `;
