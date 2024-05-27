@@ -139,24 +139,14 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Application Pet Name</th>
-                <th scope="col">Application Description</th>
+                <th scope="col">Applicant Full Name</th>
+                <th scope="col">Applicant Email</th>
+                <th scope="col">Pet ID</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>aaa</td>
-                <td>aaa</td>
-                <td><button class="btn page-btn" type="submit">Delete</button></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>bbb</td>
-                <td>bbb</td>
-                <td><button class="btn page-btn" type="submit">Delete</button></td>
-              </tr>
+            <tbody id="application_list_table">
+            
             </tbody>
           </table>
 
@@ -168,11 +158,20 @@
 
   </div>
 
+  <div id="applicationModal" class="application-modal">
+      <div class="application-view-content" id="application_view_content">
+sss
+      </div>
+  </div>  
+
+  <div id="application_view_modal"></div>
 
   <footer id="mainFooter" class="mt-5 pt-5 pb-5">
 
   </footer>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
   <!-- Main Script -->

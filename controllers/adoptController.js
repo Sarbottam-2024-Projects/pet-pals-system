@@ -1,4 +1,4 @@
-let { addApplication } = require('../models/adopt');
+let { addApplication, getAllApplication } = require('../models/adopt');
 
 
 const addAdoptApplication = async (req, res) => {
@@ -35,5 +35,16 @@ const addAdoptApplication = async (req, res) => {
   }
 };
 
+// Function to get all pets
+async function getApplicationItems(req, res) {
+  try {
+      const data = await getAllApplication();
+      res.json(data);
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Internal Server Error');
+  }
+}
 
-module.exports = { addAdoptApplication };
+
+module.exports = { addAdoptApplication, getApplicationItems };
