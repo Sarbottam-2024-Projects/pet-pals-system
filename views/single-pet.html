@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Pals | Pet Adoption Platform</title>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Reusable Header Component -->
+    <div id="mainNavbar"></div>
+
+      <!-- Parallax Slideshow -->
+      <div id="parallaxSlideshow" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="parallax-bg" style="background-image: url('/img/pet1.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="parallax-bg" style="background-image: url('/img/pet2.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="parallax-bg" style="background-image: url('/img/pet3.jpg');"></div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#parallaxSlideshow" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#parallaxSlideshow" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+
+    <div class="container">
+        <div class="page-info text-center mt-5">
+          <h1>You chose a very lovely pet!</h1>
+          <p class="mt-4"><b>Below is your future pet's information:
+          </p>
+        </div>
+        <br>
+      </div>
+
+    <div class="container">
+
+        <div id="petDetails"></div>
+
+    </div>
+
+
+    <footer id="mainFooter" class="mt-5 pt-5 pb-5">
+
+    </footer>
+
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+    <!-- Main Script -->
+    <script src="/js/indexScript.js"></script>
+    <script src="/js/logoutScript.js"></script>
+    <script src="/js/singlePetScript.js"></script>
+</body>
+
+</html>
