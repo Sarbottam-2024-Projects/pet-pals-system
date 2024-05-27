@@ -91,6 +91,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Fetch Pets
+    // Function to delete a pet
+    const deletePet = async (petId) => {
+        try {
+            const response = await fetch(`/api/pets/${petId}`, {
+                method: 'DELETE'
+            });
+            if (response.ok) {
+                // Remove the deleted pet from the DOM
+                const petRow = document.getElementById(`pet_row_${petId}`);
+                if (petRow) {
+                    petRow.remove();
+                }
+            } else {
+                console.error('Failed to delete pet');
+            }
+        } catch (error) {
+            console.error('Error deleting pet:', error);
+        }
+    };
+
     fetch('/api/pets')
         .then(response => response.json())
         .then(pets => {
@@ -100,18 +120,29 @@ document.addEventListener('DOMContentLoaded', () => {
             pets.forEach((pet) => {
                 const petRow = document.createElement('tr');
 
+                petRow.id = `pet_row_${pet.id}`; // Set a unique ID for each pet row
+
                 petRow.innerHTML = `
                     <th scope="row">${pet.id}</th>
                     <td>${pet.pet_name}</td>
                     <td>${pet.pet_age} ${pet.pet_age > 1 ? 'years' : 'year'}</td>
                     <td>${pet.pet_species}</td>
-                    <td><button class="btn page-btn" type="button">Delete</button></td>
+                    <td><button class="btn page-btn delete-btn" data-pet-id="${pet.id}" type="button">Delete</button></td>
                 `;
 
                 petList.appendChild(petRow);
             });
 
             fetchApplications();
+
+            // Attach click event listeners to delete buttons
+            const deleteButtons = document.querySelectorAll('.delete-btn');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const petId = event.target.dataset.petId;
+                    deletePet(petId);
+                });
+            });
         })
         .catch(error => {
             console.error('Error fetching pets:', error);

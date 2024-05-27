@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt Pets | Pet Pals</title>
 
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
     <!-- Main CSS -->
@@ -34,17 +33,17 @@
                     <div class="input-group">
                         <select class="form-select" id="species_dropdown">
                             <option selected>Choose Pet Type...</option>
-                            <option value="Dogs">Dogs</option>
+                            <option value="Dog">Dog</option>
                             <option value="Cat">Cats</option>
                         </select>
                         <input type="text" class="form-control" placeholder="Search pet breed">
                         <select class="form-select" id="location_dropdown">
                             <option selected>Filter Location...</option>
-                            <option value="Dogs">Victoria</option>
-                            <option value="Cat">New South Wales</option>
-                            <option value="Cat">Queensland</option>
+                            <option value="Victoria">Victoria</option>
+                            <option value="New South Wales">New South Wales</option>
+                            <option value="Queensland">Queensland</option>
                         </select>
-                        <button class="btn page-btn" type="button">Search</button>
+                        <button class="btn page-btn" type="button" id="searchBtn">Search</button>
                     </div>
                 </div>
             </div>
@@ -57,22 +56,16 @@
                 <button class="btn page-btn" type="button">View All</button>
             </div>
         </div>
-
     </div>
 
-
     <footer id="mainFooter" class="mt-5 pt-5 pb-5"></footer>
-
-
-
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
     <!-- Main Script -->
-  <script src="/js/indexScript.js"></script>
-  <script src="/js/petsScript.js"></script>
+    <script src="/js/indexScript.js"></script>
+    <!-- <script src="/js/petsScript.js"></script> -->
+    <script src="/js/searchScript.js"></script>
 
 </body>
-
 </html>
