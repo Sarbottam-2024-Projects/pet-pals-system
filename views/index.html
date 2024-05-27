@@ -19,7 +19,30 @@
 
   <!-- Reusable Header Component -->
   <div id="mainNavbar"></div>
- 
+
+      <!-- Parallax Slideshow -->
+      <div id="parallaxSlideshow" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="parallax-bg" style="background-image: url('/img/pet1.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="parallax-bg" style="background-image: url('/img/pet2.jpg');"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="parallax-bg" style="background-image: url('/img/pet3.jpg');"></div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#parallaxSlideshow" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#parallaxSlideshow" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
   <div class="container">
     <div class="page-info text-center mt-5">
       <h1>Every Pet Deserves a Loving Home. <br> <span class="text-red">Adopt</span> a Pet Today</h1>
@@ -29,89 +52,12 @@
         families
         through <br> pet adoption.
       </p>
+      <a href="/pets" class="btn btn-primary mt-3">View Available Pets</a>
     </div>
     <br>
     <br>
-    <div class="search-group-wrap w-50 m-auto mt-5">
-      <div class="input-group">
-        <select class="form-select" id="species_dropdown">
-          <option selected>Choose Pet Type...</option>
-          <option value="Dogs">Dogs</option>
-          <option value="Cat">Cats</option>
-        </select>
-        <input type="text" class="form-control" placeholder="Search pet breed">
-        <button class="btn page-btn" type="button">Search</button>
-      </div>
-    </div>
-
-    <div class="pet-lists-group mt-5">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="pet-card text-left mb-5">
-            <img src="/img/1.jpg" alt="">
-            <div class="pet-card-info">
-              <h2>Dog Breed</h2>
-              <p>Age: 5</p>
-              <a href="">View this pet</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pet-card text-left">
-            <img src="/img/2.jpg" alt="">
-            <div class="pet-card-info">
-              <h2>Dog Breed</h2>
-              <p>Age: 5</p>
-              <a href="">View this pet</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pet-card text-left">
-            <img src="/img/3.jpg" alt="">
-            <div class="pet-card-info">
-              <h2>Dog Breed</h2>
-              <p>Age: 5</p>
-              <a href="">View this pet</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pet-card text-left">
-            <img src="/img/4.jpg" alt="">
-            <div class="pet-card-info">
-              <h2>Dog Breed</h2>
-              <p>Age: 5</p>
-              <a href="">View this pet</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pet-card text-left">
-            <img src="/img/5.jpg" alt="">
-            <div class="pet-card-info">
-              <h2>Dog Breed</h2>
-              <p>Age: 5</p>
-              <a href="">View this pet</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="pet-card text-left">
-            <img src="/img/6.jpg" alt="">
-            <div class="pet-card-info">
-              <h2>Dog Breed</h2>
-              <p>Age: 5</p>
-              <a href="">View this pet</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-      <br>
-      <button class="btn page-btn" type="button"><a href="/pets">View All</a> </button>
-    </div>
   </div>
+
 
 
   <footer id="mainFooter" class="mt-5 pt-5 pb-5">
@@ -123,6 +69,7 @@
   <!-- Main Script -->
   <script src="/js/indexScript.js"></script>
   <script src="/js/logoutScript.js"></script>
+  <script src="/js/singlePetScript.js"></script>
 </body>
 
 </html>
