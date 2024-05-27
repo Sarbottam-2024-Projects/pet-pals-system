@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             applicationModalDiv.style.display = "none";
         });
     
-        document.getElementById('approveButton').addEventListener('click', () => updateApplicationStatus(application.id, 'Success'));
+        document.getElementById('approveButton').addEventListener('click', () => updateApplicationStatus(application.id, 'Approved'));
         document.getElementById('rejectButton').addEventListener('click', () => updateApplicationStatus(application.id, 'Rejected'));
     }
     
