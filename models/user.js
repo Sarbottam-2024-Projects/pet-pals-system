@@ -34,14 +34,13 @@ const addUser = async (full_name, email, password, contact_number, role) => {
   }
 };
 
-const updateUserProfile = async (email, full_name, contact_number, address, state, profile_description) => {
+const updateUserProfile = async (email, full_name, contact_number, address, state) => {
   try {
     let attributes = {};
     attributes['full_name'] = full_name || undefined;
     attributes['contact_number'] = contact_number || undefined;
     attributes['address'] = address || undefined;
     attributes['state'] = state || undefined;
-    attributes['profile_description'] = profile_description || undefined;
 
     await client.connect();
     let collection = client.db("TestDB").collection("users");

@@ -12,11 +12,10 @@ const updateUser = async (req, res) => {
 
     const result = await updateUserProfile(
       req.body.email || undefined,
-      req.body.full_name|| undefined,
-      req.body.contact_number|| undefined,
-      req.body.address|| undefined, 
-      req.body.state || undefined, 
-      req.body.profile_description|| undefined
+      req.body.full_name || undefined,
+      req.body.contact_number || undefined,
+      req.body.address || undefined, 
+      req.body.state || undefined
     )
 
     res.status(200).json({
