@@ -175,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${pet.pet_name}</td>
                     <td>${pet.pet_age} ${pet.pet_age > 1 ? 'years' : 'year'}</td>
                     <td>${pet.pet_species}</td>
-                    <td><button class="btn btn-danger" type="button">Delete</button></td>
 
                 `;
 
