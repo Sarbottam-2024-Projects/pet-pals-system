@@ -4,7 +4,7 @@ const petCollection = client.db("TestDB").collection("pets");
 
 // Function to insert a new pet
 async function insertPet(petData) {
-    https://www.mongodb.com/docs/manual/reference/method/db.collection.countDocuments/
+    // https://www.mongodb.com/docs/manual/reference/method/db.collection.countDocuments/
     const petCount = await petCollection.countDocuments();
     const petId = petCount + 1;
     const petWithId = { ...petData, id: petId };
