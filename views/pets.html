@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopt Pets | Pet Pals</title>
 
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
     <!-- Main CSS -->
@@ -31,20 +30,13 @@
         <div class="pet-list-container">
             <div class="pet-search-filter">
                 <div class="search-group-wrap w-50 m-auto mt-5">
-                    <div class="input-group">
-                        <select class="form-select" id="species_dropdown">
-                            <option selected>Choose Pet Type...</option>
-                            <option value="Dogs">Dogs</option>
-                            <option value="Cat">Cats</option>
+                    <div id="filter-container">
+                        <input type="text" id="search-name" placeholder="Search by pet name">
+                        <select id="species-filter">
+                            <option value="">All Species</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
                         </select>
-                        <input type="text" class="form-control" placeholder="Search pet breed">
-                        <select class="form-select" id="location_dropdown">
-                            <option selected>Filter Location...</option>
-                            <option value="Dogs">Victoria</option>
-                            <option value="Cat">New South Wales</option>
-                            <option value="Cat">Queensland</option>
-                        </select>
-                        <button class="btn page-btn" type="button">Search</button>
                     </div>
                 </div>
             </div>
@@ -56,22 +48,15 @@
                 <br>
             </div>
         </div>
-
     </div>
 
-
     <footer id="mainFooter" class="mt-5 pt-5 pb-5"></footer>
-
-
-
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
     <!-- Main Script -->
-  <script src="/js/indexScript.js"></script>
-  <script src="/js/petsScript.js"></script>
+    <script src="/js/indexScript.js"></script>
+    <script src="/js/petsScript.js"></script>
 
 </body>
-
 </html>
