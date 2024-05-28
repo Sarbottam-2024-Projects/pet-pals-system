@@ -44,6 +44,10 @@ router.get('/adopt', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'views', 'adoption.html'));
 });
 
+router.get('/adopter', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'views', 'adopter.html'));
+});
+
 router.get('/shelter', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'views', 'shelter.html'));
 });

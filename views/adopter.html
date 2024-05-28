@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/img/icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Pals | Pet Adoption Platform</title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Reusable Header Component -->
+  <div id="mainNavbar"></div>
+  <div class="container">
+    <div class="page-info text-center mt-5">
+      <h1>Adopter Dashboard</h1>
+    </div>
+    <br>
+    <br>
+
+
+    <div class="shelter-tab-wrap">
+      <ul class="nav nav-tabs" id="shelterTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="application-tab" data-bs-toggle="tab" data-bs-target="#application-table"
+            type="button" role="tab" aria-controls="application-table" aria-selected="true">Applications</button>
+        </li>
+        <!-- <li class="nav-item" role="presentation">
+          <button class="nav-link" id="display-pet-tab" data-bs-toggle="tab" data-bs-target="#display-pet-table"
+            type="button" role="tab" aria-controls="display-pet-table" aria-selected="false">Display Pet</button>
+        </li> -->
+        
+      </ul>
+      <div class="tab-content" id="shelterTabContent">
+        <div class="tab-pane fade show active" id="application-table" role="tabpanel" aria-labelledby="application-tab"
+          tabindex="0">
+          <br>
+          <br>
+          <table class="table page-table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Applicant Full Name</th>
+                <th scope="col">Applicant Email</th>
+                <th scope="col">Pet Name</th>
+                <th scope="col">Application Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="application_list_table">
+            
+            </tbody>
+          </table>
+
+        </div>
+        <div class="tab-pane fade" id="display-pet-table" role="tabpanel" aria-labelledby="display-pet-tab"
+        tabindex="1">
+        <br>
+        <br>
+        <table class="table page-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Pet Image</th>
+              <th scope="col">Pet Name</th>
+              <th scope="col">Pet Age</th>
+              <th scope="col">Pet Species</th>
+            </tr>
+          </thead>
+          <tbody id="pet_list_table">
+           
+          </tbody>
+        </table>
+
+      </div>
+      
+      </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="applicationModal" class="application-modal">
+      <div class="application-view-content" id="application_view_content">
+      </div>
+  </div>  
+
+  <div id="application_view_modal"></div>
+
+  <footer id="mainFooter" class="mt-5 pt-5 pb-5">
+
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+  <!-- Main Script -->
+  <script src="/js/indexScript.js"></script>
+  <script src="/js/logoutScript.js"></script>
+  <script src="/js/adopterScript.js"></script>
+</body>
+
+</html>

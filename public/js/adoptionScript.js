@@ -48,6 +48,7 @@ adoptForm.addEventListener('submit', (event) => {
   .then(data => {
     if (data.pet_id) {
       showFormMessageDiv(`Application for Pet: ${data.pet_id} is Created`);
+      window.location.href = '/adopter';
     } else {
       clearFormMessage();
     }
