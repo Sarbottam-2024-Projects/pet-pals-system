@@ -24,6 +24,7 @@ function mainNavbar() {
                             <a class="nav-link" href="/pets">Adopt Pets</a>
                             <a class="nav-link" href="/profile">My Profile</a>
                             <a class="nav-link" id="shelter-link" href="/shelter">Shelter</a>
+                            <a class="nav-link" id="adopter-link" href="/adopter">Adopter</a>
                             <a class="nav-link" href="/logout" id="logout_a">Logout</a>
                         </div>
                     </div>
@@ -66,14 +67,18 @@ mainFooter();
 
 document.addEventListener('DOMContentLoaded', function () {
     let shelterLink = document.getElementById('shelter-link');
+    let adopterLink = document.getElementById('adopter-link');
 
     function handleRole(data) {
         try {
             if (data.user.role === 'shelter') {
                 shelterLink.style.display = 'block';
+                adopterLink.style.display = 'none';
             } else {
                 shelterLink.style.display = 'none';
+                adopterLink.style.display = 'block';
             }
+
         } catch (error) {
             console.error("Error:", error);
             throw error;
