@@ -13,6 +13,7 @@ let applicationCollection = client.db("TestDB").collection("application");
 
 
 async function addApplication(applicationData) {
+  // Reference https://www.mongodb.com/docs/manual/reference/method/db.collection.countDocuments/
   const applicationCount = await applicationCollection.countDocuments();
   const applicationId = applicationCount + 1;
   const applicationWithId = { ...applicationData, id: applicationId };
